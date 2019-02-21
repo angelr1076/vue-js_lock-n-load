@@ -20,9 +20,11 @@ body {
   height: 100px;
   display: block;
   margin: 0 auto;
+  z-index: 0;
 }
 
 .healthbar {
+  position: relative;
   width: 80%;
   height: 40px;
   background-color: #eee;
