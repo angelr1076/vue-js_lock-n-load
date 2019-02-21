@@ -34,10 +34,7 @@ new Vue({
         isPlayer: true,
         text: `Rambo uses grenade on Enemy for ${damage}`
       })
-      if (this.checkWin()) {
-        return
-      }
-      this.ramboHealth -= this.calcDamage(10, 20)
+      this.ramboHealth -= damage
       if (this.checkWin()) {
       }
     },
@@ -57,6 +54,10 @@ new Vue({
     giveUp: function () {
       this.ramboHealth = 0
       this.gameIsRunning = false
+      this.turns.unshift({
+        isPlayer: true,
+        text: `Rambo gives up and is killed by his captor.`
+      })
     },
     enemyAttack: function () {
       let damage = this.calcDamage(5, 12)
